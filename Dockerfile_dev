@@ -1,0 +1,9 @@
+FROM php:5.6-apache
+
+WORKDIR /app
+
+COPY . /app
+
+RUN rm -r /var/www/html && ln -s /app/html /var/www/
+
+RUN a2enmod rewrite cgid

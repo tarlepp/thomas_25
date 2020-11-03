@@ -1,0 +1,11 @@
+version: '3'
+services:
+  php:
+    build:
+      context: .
+      dockerfile: ./Dockerfile_dev
+    command: apache2ctl -DFOREGROUND
+    ports:
+      - 8080:80
+    volumes:
+      - ./:/app/system:cached
